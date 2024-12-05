@@ -37,7 +37,7 @@ def is_correct(upd: list) -> bool:
 
 print("Part 1:", sum(u[len(u)//2] for u in updates if is_correct(u)))
 
-def cmp(a: int,b:int):
+def cmp(a: int, b: int):
     if b in orders[a]:
         return -1
     elif a in orders[b]:
