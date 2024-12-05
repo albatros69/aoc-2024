@@ -2,7 +2,6 @@
 
 import sys
 import re
-from ast import literal_eval
 
 lines = []
 for line in sys.stdin:
