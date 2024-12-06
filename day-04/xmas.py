@@ -34,3 +34,4 @@ def is_X_MAS(z: complex):
 
 all_A = [ z for z in xwords if xwords[z] == 'A' ]
 print("Part 2:", sum(is_X_MAS(z) for z in all_A))
+
