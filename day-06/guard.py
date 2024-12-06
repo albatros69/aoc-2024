@@ -67,7 +67,3 @@ try:
             dir *= 1j
 except KeyError:
     print("Part 2:", len(obstructions))
-
-
-
-
