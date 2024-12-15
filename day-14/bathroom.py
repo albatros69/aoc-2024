@@ -39,7 +39,7 @@ def safetly_level(nb_sec):
 
 print("Part 1:", safetly_level(100))
 
-# When the picture of Christmas tree is formed, the robots are mostly in one quadrant,
+# When the picture of the Christmas tree is formed, the robots are mostly in one quadrant,
 # and the safety level is low. Thanks Reddit!
 # https://www.reddit.com/r/adventofcode/comments/1he0g67/2024_day_14_part_2_the_clue_was_in_part_1/
 runs = [safetly_level(n) for n in range(10000)]
