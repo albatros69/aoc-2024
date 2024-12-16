@@ -88,7 +88,9 @@ def best_tiles():
 
         new_d = 1j * d
         new_cost = cost + 1000
-        if new_cost < b_path:
+        if new_cost < b_path and new_cost <= already_seen.get(
+            (pos, new_d), new_cost + 1
+        ):
             heappush(queue, (new_cost, (x, y), (new_d.real, new_d.imag), tiles))
             heappush(queue, (new_cost, (x, y), (-new_d.real, -new_d.imag), tiles))
 
