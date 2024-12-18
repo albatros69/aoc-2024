@@ -25,7 +25,7 @@ def shortest_path():
             ),
         )
     ]
-    already_seen = corrupted_memory.copy()
+    already_seen = set()
 
     while queue:
         l, x, y, path = heappop(queue)
@@ -33,7 +33,11 @@ def shortest_path():
         if (x, y) == (maxi, maxi):
             return l, path
 
-        if not (0 <= x <= maxi and 0 <= y <= maxi) or (x, y) in already_seen:
+        if (
+            not (0 <= x <= maxi and 0 <= y <= maxi)
+            or (x, y) in already_seen
+            or (x, y) in corrupted_memory
+        ):
             continue
 
         already_seen.add((x, y))
@@ -41,6 +45,7 @@ def shortest_path():
             if (
                 0 <= new_x <= maxi
                 and 0 <= new_y <= maxi
+                and (new_x, new_y) not in corrupted_memory
                 and (new_x, new_y) not in already_seen
             ):
                 heappush(
